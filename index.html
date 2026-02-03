@@ -140,6 +140,173 @@
       color: #bbb;
     }
 
+    /* Seção de Avaliações */
+    .reviews-section {
+      padding: 80px 20px;
+      background: rgba(0, 0, 0, 0.7);
+      margin-top: 50px;
+    }
+
+    .section-title {
+      font-size: 32px;
+      background: linear-gradient(90deg, #8e2de2, #4a00e0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(90deg, #8e2de2, #4a00e0);
+    }
+
+    .reviews-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .review-card {
+      background: rgba(255,255,255,0.05);
+      padding: 25px;
+      border-radius: 12px;
+      width: 300px;
+      text-align: left;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+    }
+
+    .review-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .review-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #8e2de2, #4a00e0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+      margin-right: 15px;
+    }
+
+    .review-info h3 {
+      margin: 0 0 5px 0;
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .review-info p {
+      margin: 0;
+      font-size: 14px;
+      color: #9b59b6;
+      font-style: italic;
+    }
+
+    .review-text {
+      font-size: 16px;
+      color: #ddd;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .review-stars {
+      color: #FFD700;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+
+    /* Seção de FAQ */
+    .faq-section {
+      padding: 80px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-container {
+      margin-top: 40px;
+      text-align: left;
+    }
+
+    .faq-item {
+      background: rgba(255,255,255,0.05);
+      margin-bottom: 15px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .faq-question {
+      padding: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      background: rgba(139, 0, 255, 0.1);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s;
+    }
+
+    .faq-question:hover {
+      background: rgba(139, 0, 255, 0.2);
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 24px;
+      color: #9b59b6;
+      transition: transform 0.3s;
+    }
+
+    .faq-item.active .faq-question::after {
+      content: '-';
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      color: #ccc;
+      line-height: 1.5;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+      padding: 20px;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #8e2de2, #4a00e0, transparent);
+      margin: 60px auto;
+      width: 80%;
+    }
+
     footer {
       padding: 20px;
       margin-top: 50px;
@@ -152,6 +319,26 @@
       from {opacity: 0; transform: translateY(20px);}
       to {opacity: 1; transform: translateY(0);}
     }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .reviews-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .review-card {
+        width: 90%;
+      }
+      
+      .hero h2 {
+        font-size: 28px;
+      }
+      
+      .section-title {
+        font-size: 26px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -161,6 +348,8 @@
     <h1>Ducke Menu</h1>
     <nav>
       <a href="#">Início</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#faq">FAQ</a>
     </nav>
   </header>
 
@@ -174,7 +363,7 @@
         <p>Taxa de Sucesso</p>
       </div>
       <div class="feature">
-        <h3>30/01</h3>
+        <h3>03/02</h3>
         <p>Atualizado</p>
       </div>
       <div class="feature">
@@ -184,17 +373,106 @@
     </div>
 
     <div class="buttons">
-      <a href="https://www.mediafire.com/file/rqnn6bpr1jrir08/DuckeMenu.rar/file" class="btn btn-download">Baixar Agora</a>
+      <a href="https://www.mediafire.com/file/7fwg34923qu9dyr/DuckeMenu.zip/file" class="btn btn-download">Baixar Agora</a>
       <a href="https://discord.com/invite/GNbPmAUeBx" class="btn btn-discord">Comunidade Discord</a>
-      <div class="info-extra">Versão mais recente | Tamanho: 5.29MB</div>
+      <div class="info-extra">Versão mais recente | Tamanho: 49,6MB</div>
     </div>
   </section>
 
-<footer>
-  <p>Site Criado Por Blzx Scripter & K$</p>
-  <p>Ducke Menu © 2025 - Todos os direitos reservados</p>
-</footer>
+  <!-- Seção de Avaliações -->
+  <section id="avaliacoes" class="reviews-section">
+    <h2 class="section-title">O Que Dizem Nossos Usuários</h2>
+    <p style="color: #aaa; margin-bottom: 40px; font-size: 18px;">Veja o que nossa comunidade tem a dizer sobre o Ducke Menu.</p>
+    
+    <div class="reviews-container">
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar">K</div>
+          <div class="review-info">
+            <h3>R4f43L_S4NT05</h3>
+            <p>Criador De Conteudo</p>
+          </div>
+        </div>
+        <div class="review-text">
+         Comecei a usar o Ducke Menu para meus vídeos de Roblox e os resultados foram surpreendentes! A velocidade de execução dos scripts é incrível e a compatibilidade com meus scripts favoritos é perfeita. Meu canal cresceu 40% desde que implementei essas executor nos meus conteúdos!
+        </div>
+        <div class="review-stars">⭐⭐⭐⭐</div>
+      </div>
+      
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar">B</div>
+          <div class="review-info">
+            <h3>MariCosta_Dev</h3>
+            <p>Desenvolvedora De Script</p>
+          </div>
+        </div>
+        <div class="review-text">
+          Como criadora de scripts, preciso de um executor confiável para testar meus códigos. O Ducke Menu não só executa perfeitamente como tem ferramentas de debug que facilitaram muito meu trabalho. Economizo horas graças à interface intuitiva!
+        </div>
+        <div class="review-stars">⭐⭐⭐⭐</div>
+      </div>
+      
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar">A</div>
+          <div class="review-info">
+            <h3>xX_DarkPlayer_X</h3>
+            <p>Ultilizador</p>
+          </div>
+        </div>
+        <div class="review-text">
+          Depois que comecei a usar o Ducke Menu, minha performance nos jogos competitivos melhorou 200%! Os scripts carregam instantaneamente e nunca mais precisei me preocupar com detecção. O suporte da comunidade no Discord é rápido e eficiente!
+        </div>
+        <div class="review-stars">⭐⭐⭐⭐</div>
+      </div>
+    </div>
+  </section>
 
+  <hr>
+
+  <!-- Seção de FAQ -->
+  <section id="faq" class="faq-section">
+    <h2 class="section-title">Perguntas Frequentes</h2>
+    <p style="color: #aaa; margin-bottom: 40px; font-size: 18px;">Encontre respostas para as dúvidas mais comuns sobre o Ducke Menu.</p>
+    
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question">O Ducke Menu é seguro de usar?</div>
+        <div class="faq-answer">Sim, o Ducke Menu é desenvolvido com foco na segurança do usuário. Utilizamos criptografia e métodos de proteção para garantir que sua conta permaneça segura durante o uso.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">Quais jogos do Roblox são compatíveis?</div>
+        <div class="faq-answer">O Ducke Menu é compatível com a maioria dos jogos populares do Roblox, incluindo Adopt Me, Brookhaven, Arsenal, e muitos outros. A compatibilidade é atualizada regularmente.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">O Ducke Menu é realmente gratuito?</div>
+        <div class="faq-answer">Sim, o Ducke Menu é completamente gratuito. Não há custos escondidos ou assinaturas necessárias para utilizar todas as funcionalidades básicas e avançadas.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">Como instalar o Ducke Menu?</div>
+        <div class="faq-answer">Após baixar o arquivo, basta extrair o conteúdo e executar o instalador. Siga as instruções na tela e em poucos minutos o Ducke Menu estará pronto para uso.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">Posso ser banido por usar o Ducke Menu?</div>
+        <div class="faq-answer">Embora o risco de banimento sempre exista ao usar qualquer executor, o Ducke Menu possui recursos de detecção evasiva que reduzem significativamente essa possibilidade.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">Como obter suporte técnico?</div>
+        <div class="faq-answer">Para suporte técnico, junte-se ao nosso servidor Discord oficial, onde nossa comunidade e equipe de suporte estão disponíveis para ajudar com quaisquer problemas.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Site Criado Por Blzx Scripter & K$</p>
+    <p>Ducke Menu © 2025 - Todos os direitos reservados</p>
+  </footer>
 
   <script>
     // Bolinhas animadas no fundo
@@ -245,8 +523,35 @@
       particles.forEach(p => p.update());
     }
 
-    init();
-    animate();
+    // Funcionalidade do FAQ (acordeão)
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+          // Fecha todos os outros itens
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.classList.remove('active');
+            }
+          });
+          
+          // Abre/fecha o item clicado
+          item.classList.toggle('active');
+        });
+      });
+      
+      // Abre o primeiro item por padrão
+      if (faqItems.length > 0) {
+        faqItems[0].classList.add('active');
+      }
+      
+      // Inicializa a animação de fundo
+      init();
+      animate();
+    });
 
     window.addEventListener("resize", () => {
       canvas.width = window.innerWidth;
